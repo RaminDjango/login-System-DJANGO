@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/loga.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Conectarea</h1>
+        </div>
+        <div class="img">
+            <img src="/static/image/R.jpg" alt="">
+
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input required placeholder="Nume de utilizator" type="text" name="utiliator"><br>
+            <input required placeholder="Introduce parola" type="password" name="password"><br>
+            <button id="btn" type="submit">Logare</button>
+            <a id="cont-uitare" href="{% url 'registrare-url' %}">Ai uitat contul ?</a><br>
+            <a id='schimbare' href="{% url 'reset_password' %}">Ai uitat parola?</a>
+        </form>
+    </div>
+</body>
+</html>
