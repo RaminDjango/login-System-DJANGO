@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/regist.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Înregistrare</h1>
+        </div>
+        <div class="img">
+            <img src="/static/image/R.jpg" alt="">
+
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input required placeholder="Nume de utilizator" type="text" name="utiliator"><br>
+            <input required placeholder="Introduce emailu" type="email" name="email"><br>
+            <input required placeholder="Introduce parola" type="password" name="password"><br>
+            <input required placeholder="Confirma parola" type="password" name="confirm-password"><br>
+            <button id="btn" type="submit">Înregistrare</button>
+            <a id="logs" href='{% url "logins-url" %}'><span id="sgt"><<</span>Inapoi</a>
+        </form>
+    </div>
+   
+    {% for meg in messages %}
+    <div class="mesajul">
+        <h3 id="txt" style=" top: -590px; width: 500px; background-color: transparent; border-radius: 20px; padding: 20px; 
+        font-size: 20px; 
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+        position: relative; color: red; left: 500px;">{{meg}}</h3>
+    </div>
+    {% endfor %}
+  
+ 
+    
+</body>
+</html>
